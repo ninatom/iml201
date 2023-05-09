@@ -1,0 +1,69 @@
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.invisible-button {
+    border: 1px solid blue;
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 10%;
+    height: 10%;
+    opacity: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(45deg, #FF69B4, #FFFF00, #87CEEB);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+  color: #FFFFFF; /* set text color to white */
+  font-size: 32px; /* set font size */
+  font-weight: bold; /* set font weight to bold */
+}
+
+p {
+  color: #000000; /* set text color to black */
+  font-size: 16px; /* set font size */
+  line-height: 1.5; /* set line height */
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; } /* start gradient from left */
+  50% { background-position: 100% 50%; } /* end gradient at right */
+  100% { background-position: 0% 50%; } /* start gradient from left again */
+}
+
