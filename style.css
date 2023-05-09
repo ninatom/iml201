@@ -10,14 +10,25 @@
     height: auto;
 }
 
-.invisible-button {
+.invisible-button-TV {
     border: 1px solid blue;
     display: block;
     position: absolute;
-    bottom: 10%;
-    right: 10%;
-    width: 10%;
-    height: 10%;
+    bottom: 55%;
+    right: 32%;
+    width: 7%;
+    height: 15%;
+    opacity: 0;
+}
+
+.invisible-button-IP {
+    border: 1px solid blue;
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    right: 58%;
+    width: 6%;
+    height: 25%;
     opacity: 0;
 }
 
@@ -93,10 +104,4 @@ p {
 /*page - 3*/
 
 
-.page-3-text {
-        border: 10px solid green;
-  max-width: 800px;
-  margin: 0 2rem;
-  text-align: justify;
-  font-size: 1.2rem;
-}
+

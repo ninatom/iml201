@@ -1,83 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Multiple Eyeballs with Moving Pupils</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-		}
-		
-		.eye {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 100px;
-			height: 100px;
-			border-radius: 50%;
-			background-color: white;
-			box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-			overflow: hidden;
-		}
-		
-		.pupil {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 30px;
-			height: 30px;
-			background-color: black;
-			border-radius: 50%;
-		}
-	</style>
+    <title>Multiple Eyeballs with Moving Pupils</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .eye {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .pupil {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .page-3-text {
+            border: 1px solid green;
+            max-width: 800px;
+            margin: 0 2rem;
+            text-align: justify;
+            font-size: 1.2rem;
+        }
+
+    </style>
 </head>
+
 <body>
 
-<div class='page-3-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in ultricies lorem. Nullam blandit ultricies magna, eget suscipit massa luctus vel.</div>
+    <div class='page-3-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in ultricies lorem. Nullam blandit ultricies magna, eget suscipit massa luctus vel.</div>
 
 
 
-	<div class="eye" id="eye1">
-		<div class="pupil" id="pupil1"></div>
-	</div>
-	<div class="eye" id="eye2">
-		<div class="pupil" id="pupil2"></div>
-	</div>
-	<div class="eye" id="eye3">
-		<div class="pupil" id="pupil3"></div>
-	</div>
-	<div class="eye" id="eye4">
-		<div class="pupil" id="pupil4"></div>
-	</div>
+    <div class="eye" id="eye1">
+        <div class="pupil" id="pupil1"></div>
+    </div>
+    <div class="eye" id="eye2">
+        <div class="pupil" id="pupil2"></div>
+    </div>
+    <div class="eye" id="eye3">
+        <div class="pupil" id="pupil3"></div>
+    </div>
+    <div class="eye" id="eye4">
+        <div class="pupil" id="pupil4"></div>
+    </div>
 
-	<script>
-		document.addEventListener("mousemove", function(event) {
-			var mouseX = event.clientX;
-			var mouseY = event.clientY;
-			
-			movePupil(mouseX, mouseY, "pupil1", "eye1");
-			movePupil(mouseX, mouseY, "pupil2", "eye2");
-			movePupil(mouseX, mouseY, "pupil3", "eye3");
-			movePupil(mouseX, mouseY, "pupil4", "eye4");
-		});
+    <script>
+        document.addEventListener("mousemove", function(event) {
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
 
-		function movePupil(mouseX, mouseY, pupilId, eyeId) {
-			var eye = document.getElementById(eyeId);
-			var pupil = document.getElementById(pupilId);
-			var eyeRect = eye.getBoundingClientRect();
-			
-			var eyeCenterX = eyeRect.left + eyeRect.width / 2;
-			var eyeCenterY = eyeRect.top + eyeRect.height / 2;
-			var angle = Math.atan2(mouseY - eyeCenterY, mouseX - eyeCenterX);
-			var maxDistance = eyeRect.width / 2 - pupil.offsetWidth / 2;
-			var distance = Math.min(maxDistance, Math.sqrt(Math.pow(mouseX - eyeCenterX, 2) + Math.pow(mouseY - eyeCenterY, 2)));
-			
-			var pupilX = Math.cos(angle) * distance;
-			var pupilY = Math.sin(angle) * distance;
-			pupil.style.transform = "translate(" + pupilX + "px, " + pupilY + "px)";
-		}
-	</script>
-</body>
-</html>
+            movePupil(mouseX, mouseY, "pupil1", "eye1");
+            movePupil(mouseX, mouseY, "pupil2", "eye2");
+            movePupil(mouseX, mouseY, "pupil3", "eye3");
+            movePupil(mouseX, mouseY, "pupil4", "eye4");
+        });
+
+        function movePupil(mouseX, mouseY, pupilId, eyeId) {
+            var eye = document.getElementById(eyeId);
+            var pupil = document.getElementById(pupilId);
+            var eyeRect = eye.getBoundingClientRect();
+
+            var eyeCenterX = eyeRect.left + eyeRect.width / 2;
+            var eyeCenterY = eyeRect.top + eyeRect.height / 2;
+            var angle = Math.atan2(mouseY - eyeCenterY, mouseX - eyeCenterX);
+            var maxDistance = eyeRect.width / 2 - pupil.offsetWidth / 2;
+            var distance = Math.min(maxDistance, Math.sqrt(Math.pow(mouseX - eyeCenterX, 2) + Math.pow(mouseY - eyeCenterY, 2)));
+
+            var pupilX = Math.cos(angle) * distance;
+            var pupilY = Math.sin(angle) * distance;
+            pupil.style.transform = "translate(" + pupilX + "px, " + pupilY + "px)";
+        }
+    </script>
+</body></html>

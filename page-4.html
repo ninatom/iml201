@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Project</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: #FFFFFF;
+            background-image: linear-gradient(45deg, #7CB9E8, #007FFF, #7FFFD4);
+            background-size: 200% 200%;
+            animation: gradient 10s ease infinite;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            /* set text color to white */
+            font-size: 32px;
+            /* set font size */
+            font-weight: bold;
+            /* set font weight to bold */
+        }
+
+        p {
+            color: #000000;
+            /* set text color to black */
+            font-size: 16px;
+            /* set font size */
+            line-height: 1.5;
+            /* set line height */
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            /* start gradient from left */
+            50% {
+                background-position: 100% 50%;
+            }
+
+            /* end gradient at right */
+            100% {
+                background-position: 0% 50%;
+            }
+
+            /* start gradient from left again */
+        }
+
+        .image {
+            flex: 0 0 40%;
+            max-width: 40%;
+            margin-right: 20px;
+        }
+
+        .text {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="iml201assets/NinaTomasevic_ImageProjectFinal.png" alt="" style="width: 100%;">
+        </div>
+        <div class="text">
+            <h1>Image Project</h1>
+            <p>Your text here</p>
+        </div>
+    </div>
+</body></html>
